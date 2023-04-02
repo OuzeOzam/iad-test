@@ -15,6 +15,7 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
   <!-- Add the sm prefix -->
   <div v-else class="grid sm-grid-cols-[minmax(0,_1fr)_16rem] gap-6">
     <VCard v-if="restaurant">
+
       <VImg  
         v-for="photo in restaurant.photos" 
         :key="photo" 
@@ -23,6 +24,7 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
         cover
         gradient="to top, rgba(0,0,0,.1), rgba(0,0,0,.5)"
       >
+
         <VCardTitle class="!text-4xl text-white">
           {{ restaurant.name }}
         <VRow class="stars-row">
@@ -39,15 +41,17 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
           <pre v-else class="font-sans rating-value">0</pre>
         </VRow>
         </VCardTitle>
-       
+
       </VImg>
       <VCardText>
         <div class="grid grid-cols-2 gap-4">
           <RestaurantLocation v-if="restaurant.location" :location="restaurant.location" />
           <KeyValue icon="mdi-phone">
+
             <p v-if="restaurant.display_phone" class="text-body-1">
               <!-- switch phone to display_phone value -->
               {{ restaurant.display_phone }}
+
             </p>
           </KeyValue>
         </div>

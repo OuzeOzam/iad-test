@@ -40,6 +40,7 @@ defineProps<{
       <RestaurantLocation :location="restaurant?.location" />
     </VCardText>
 
+
     <VCardActions class="mt-auto">
       <VBtn color="primary" variant="text" :to="`/restaurants/${restaurant?.id}`">
         see more
