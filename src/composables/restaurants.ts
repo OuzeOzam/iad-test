@@ -43,3 +43,14 @@ export function useFetchRestaurant({ restaurantId }: { restaurantId: string | st
     },
   });
 }
+
+// This function returns the average of several numbers 
+// by passing them through a loop that will first add 
+// them and then divide them to the total number
+export function averageRating(reviews: any) {
+  let sum = 0;
+  for (const review of reviews)
+    sum += review.rating;
+  const avrg = sum / reviews.length;
+  return avrg;
+}
