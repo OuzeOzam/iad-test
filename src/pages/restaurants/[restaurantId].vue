@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useFetchRestaurant } from '~/composables/restaurants';
+import { averageRating } from '~/composables/restaurants';
 
 const { params } = useRoute();
 const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.restaurantId });
@@ -13,14 +14,8 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
   </VAlert>
   <div v-else class="grid grid-cols-[minmax(0,_1fr)_16rem] gap-6">
     <VCard v-if="restaurant">
-      <VImg
-        v-for="photo in restaurant.photos"
-        :key="photo"
-        :src="restaurant.photos[0]"
-        height="250"
-        cover
-        gradient="to top, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-      >
+      <VImg v-for="photo in restaurant.photos" :key="photo" :src="restaurant.photos[0]" height="250" cover
+        gradient="to top, rgba(0,0,0,.1), rgba(0,0,0,.5)">
         <VCardTitle class="!text-4xl text-white">
           {{ restaurant.name }}
         </VCardTitle>
@@ -29,6 +24,10 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
           <br>
           Vuetify has a component for this. Use this one
         </VAlert>
+        <VRating 
+        half-increments
+        readonly :model-value="averageRating(restaurant?.reviews)" 
+        />
       </VImg>
       <VCardText>
         <div class="grid grid-cols-2 gap-4">
