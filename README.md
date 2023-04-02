@@ -1,3 +1,9 @@
+# Important
+La branche main contient le projet livré comme demandé
+
+
+La branche feat-new-ui contient des améliorations basiques mais nécessaires
+
 # Iad coding Challenge
 
 ## Summary
