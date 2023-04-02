@@ -22,7 +22,7 @@ const { data: restaurants, isError } = useFetchRestaurants();
       </a>
     </VAlert>
     <LoadingError v-if="isError" />
-    <div v-else-if="restaurants">
+    <div v-else-if="restaurants" class="cardsGrid">
       <RestaurantCard
         v-for="restaurant of restaurants"
         :key="restaurant.id"
@@ -31,3 +31,30 @@ const { data: restaurants, isError } = useFetchRestaurants();
     </div>
   </div>
 </template>
+<style>
+.cardsGrid {
+  margin: 1rem 0 1rem 0;
+  display: grid;
+}
+
+@media screen and (max-width: 20em) {
+  .cardsGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.9375em;
+}
+}
+
+@media screen and (min-width: 20em) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9375em;
+}
+}
+
+@media screen and (min-width: 37.5em) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9375em;
+}
+}
+</style>
