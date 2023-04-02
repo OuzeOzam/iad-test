@@ -12,7 +12,8 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
     <br>
     You should fix that
   </VAlert>
-  <div v-else class="grid grid-cols-[minmax(0,_1fr)_16rem] gap-6">
+  <!-- Add the sm prefix -->
+  <div v-else class="grid sm-grid-cols-[minmax(0,_1fr)_16rem] gap-6">
     <VCard v-if="restaurant">
       <VImg v-for="photo in restaurant.photos" :key="photo" :src="restaurant.photos[0]" height="250" cover
         gradient="to top, rgba(0,0,0,.1), rgba(0,0,0,.5)">
@@ -34,6 +35,7 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
           <RestaurantLocation :location="restaurant.location" />
           <KeyValue icon="mdi-phone">
             <p class="text-body-1">
+              <!-- switch phone to display_phone value -->
               {{ restaurant.display_phone }}
               <VAlert type="warning">
                 ↑ TODO: we would like to display the formatted phone
