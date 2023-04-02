@@ -29,7 +29,6 @@ defineProps<{
     half-increments 
     readonly 
     :model-value="averageRating(restaurant?.reviews)" 
-    
     />
     <VCardText>
       <RestaurantLocation :location="restaurant?.location" />

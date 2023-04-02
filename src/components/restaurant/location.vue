@@ -8,6 +8,6 @@ defineProps<{
 
 <template>
   <KeyValue icon="mdi-map-marker">
-    <pre class="my-0" v-text="location?.formatted_address" />
+    <pre class="my-0 font-sans" v-text="location?.formatted_address" />
   </KeyValue>
 </template>

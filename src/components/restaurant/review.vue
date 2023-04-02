@@ -20,7 +20,7 @@ defineProps<{
 
     <VCardText v-for="review of reviews" :key="review">
       <VRating half-increments readonly :model-value="review.rating" />
-      <pre v-text="review.text" />
+      <pre class="font-sans" v-text="review.text" />
     </VCardText>
   </VCard>
 </template>
