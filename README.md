@@ -2,7 +2,7 @@
 La branche main contient le projet livré comme demandé
 
 
-La branche feat-new-ui contient des améliorations basiques mais nécessaires
+La branche feat-new-ui contient des améliorations d'ui humblement proposées
 
 # Iad coding Challenge
 
