@@ -11,10 +11,7 @@ const ratingFilterItems = [
 
 <template>
   <VCard variant="outlined">
-    <VAlert type="info">
-      TODO: this is a bonus! <br>
-      Implement the rating filter
-    </VAlert>
+
     <VCardText>
       <div class="flex flex-wrap items-center justify-between gap-8">
         <strong>Filter the restaurants by ratings</strong>

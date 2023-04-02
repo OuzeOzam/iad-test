@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     RatingFilter: typeof import('./components/rating-filter.vue')['default']
     RestaurantCard: typeof import('./components/restaurant/card.vue')['default']
     RestaurantLocation: typeof import('./components/restaurant/location.vue')['default']
+    RestaurantRatingStars: typeof import('./components/restaurant/ratingStars.vue')['default']
     RestaurantReview: typeof import('./components/restaurant/review.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
