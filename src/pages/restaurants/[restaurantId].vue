@@ -50,7 +50,9 @@ const { data: restaurant, isError } = useFetchRestaurant({ restaurantId: params.
         TODO: this should go under the company card on small device
       </VAlert>
       <ul class="pa-0">
-        <RestaurantReview />
+        <RestaurantReview 
+        :reviews="restaurant?.reviews"
+        />
       </ul>
     </aside>
   </div>
